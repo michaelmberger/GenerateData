@@ -1,0 +1,26 @@
+random data generator - person, demographic, identifiers, clinical data, claim
+
+person (first name, last name, middle name)
+demographic (birthdate, phone number, address)
+identifiers(phn, sin, gid, rcmp id, cf id)
+clinical data(rx, disp, rxns, allergies, conditions, device rx and disp)
+
+json
+entity{1...100}
+	identifier[field names in data]{0...num(fields in data)}
+	other_entity_ref{0...1}
+		foreign_field[data.fieldname]{1...num(identifier)}
+		cardinality[min, max]{1} --everyone has at least min, has at most max with linear distribution.
+	data{1}
+		field{1...ORACLE_MAX}
+			data type [int, float, string]{1}
+				range[regex]{0...100}
+				or
+				source [filename]{0...5}
+					use_distribution[yes|no]{1}
+enity
+	identifier
+	data
+		identifier
+
+

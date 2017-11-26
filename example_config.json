@@ -1,0 +1,26 @@
+{
+	"person":{
+		"identifier":"string",
+		"other_entity_ref":{
+			"foreign_fields":{"name":"id",
+					"cardinality":1
+					}
+			
+		},
+		"filename":["output_file"],
+		"data":{
+			"id":{
+				"data_type":{"type":"number",
+						"autoincrement":"False",
+						"range":"[1-9]",
+						"source":[{
+							"filename":[""],
+							"use_distribution":"True" }]
+				},
+			"position":1,
+			"guarantee_unique":1	
+			}
+		}
+		
+	}
+}
